@@ -1,0 +1,31 @@
+namespace: blank-5244
+blank-5244:
+  defines: runnable
+  metadata:
+    name: blank-5244
+    description: >-
+      This is a golang example custom service. It is running a web server on
+      port 8080.
+    icon: https://emojiapi.dev/api/v1/package.svg
+  containers:
+    blank-5244:
+      build: .
+  services:
+    webserver-port:
+      container: blank-5244
+      port: 8080
+      host-port: 8080
+      publish: false
+      protocol: TCP
+      description: This port is exposed for a web server.
+  variables:
+    admin-username:
+      env: ADMIN_USERNAME
+      type: string
+      description: Admin username for the service
+      value: admin
+    admin-password:
+      env: ADMIN_PASSWORD
+      type: string
+      description: Admin password for the service
+      value: '!!!SETME-USE-SECRETS!!!'
