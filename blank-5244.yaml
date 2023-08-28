@@ -1,0 +1,31 @@
+namespace: blank-5244
+blank-5244:
+  defines: runnable
+  metadata:
+    name: blank-5244
+    description: >-
+      This is a Golang web service with simple environmental variables settings
+      and a web server.
+    icon: https://golang.org/lib/godoc/images/go-logo-blue.svg
+  containers:
+    blank-5244:
+      build: .
+  services:
+    webserver:
+      container: blank-5244
+      port: 8080
+      host-port: 8080
+      publish: false
+      protocol: TCP
+      description: Port exposed by the application for HTTP requests
+  variables:
+    admin-username:
+      env: ADMIN_USERNAME
+      type: string
+      description: Admin username used in the application
+      value: admin
+    admin-password:
+      env: ADMIN_PASSWORD
+      type: string
+      description: Admin password used in the application
+      value: '!!!SETME-USE-SECRETS!!!'
