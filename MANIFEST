@@ -1,2 +1,2 @@
-REPO ernstov/blank-5244
-LOAD service.yaml
+REPO blank-5244
+LOAD blank-5244.yaml
